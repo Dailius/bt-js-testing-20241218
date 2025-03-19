@@ -35,12 +35,19 @@ Some text here
 
 Push local repo into GitHub:  
 ```bash
-git remote add origin https://github.com/Dailius/bt-js-testing-20241218.git
+    git remote add origin https://github.com/Dailius/bt-js-testing-20241218.git
 
-git branch -M main
+    git branch -M main
 
-git push -u origin main
+    git push -u origin main
 ```
+
+
+```bash
+    git push
+    git pull
+```
+
 
 
 
