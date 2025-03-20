@@ -48,7 +48,9 @@ Push local repo into GitHub:
     git pull
 ```
 
-
-
+```bash
+    git checkout -b branch_dailius
+    git branch
+```
 
 
