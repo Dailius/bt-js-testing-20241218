@@ -17,6 +17,20 @@
     git branch -D branch_demo
 ```
 
+Merge branches:
+```bash
+    git checkout branch_name_A
+    git merge branch_name_B
+```
+
+Merge conflict:
+```bash
+    git checkout branch_name_A
+    git merge branch_name_B
+    # fix files where require keep relevant code.
+    git commit -m "Resolve merge conflict ..."
+```
+
 
 
 
