@@ -1,5 +1,6 @@
 
-
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
 
 ## 1.Markdown language examples
 
@@ -30,7 +31,7 @@ Merge conflict:
     # fix files where require keep relevant code.
     git commit -m "Resolve merge conflict ..."
 ```
-
+![](/pictures/git_branching.png)
 
 
 

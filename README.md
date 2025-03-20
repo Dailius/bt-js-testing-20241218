@@ -8,5 +8,8 @@
 ### [Lecture 02](/notes/notes_lecture_02.md)
 1. Introduction
 2. Git commands
+3. Git branching
+
+
 
 ## Week02
