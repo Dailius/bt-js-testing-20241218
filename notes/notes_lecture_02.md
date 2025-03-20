@@ -11,6 +11,10 @@
     git checkout some_branch_name
 
     git checkout some_commit_id
+
+    # delete not merged branch
+    git branch -D branch-name
+    git branch -D branch_demo
 ```
 
 
