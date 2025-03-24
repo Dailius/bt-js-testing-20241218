@@ -2,6 +2,7 @@
 [QA road map](https://roadmap.sh/qa)  
 [The Best Testing And QA Methodologies](https://jelvix.com/blog/qa-testing-methodologies)  
 [ISTQB exams link](https://atsqa.org/educational-resources)   
+[ISTQB](https://www.istqb.org/)
 
 ## Git usefull links:
 [Git official site](https://git-scm.com/)  
