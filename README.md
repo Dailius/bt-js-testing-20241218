@@ -18,5 +18,13 @@
 5. Testing types
 
 
+### [Lecture 03](/notes/notes_lecture_04.md)
+1. Repeat and check homework
+2. Nonfunctional
+3. Boxing
+4. Software dev. methodologies: Waterfall, Agile
+5. Test Cases (TC)
+
+
 
 ## Week02
