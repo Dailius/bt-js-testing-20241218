@@ -11,7 +11,7 @@
 3. Git branching
 
 
-## Week03
+## Week02
 ### [Lecture 03](/notes/notes_lecture_03.md)
 1. Repeat and check homework
 2. Requirements for QA specialist
@@ -30,5 +30,11 @@
 1. Repeat and check homework
 2. Test Cases (TC)
 
+### [Lecture 06](/notes/notes_lecture_06.md)
+1. Repeat and check homework
+2. FE vs BE
+3. System integrations
+4. REST API
+5. Postman
 
-## Week04
+## Week03
