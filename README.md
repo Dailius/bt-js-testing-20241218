@@ -38,3 +38,11 @@
 5. Postman
 
 ## Week03
+### [Lecture 07](/notes/notes_lecture_07.md)
+1. Repeat and check homework
+2. HTTP/HTTPS
+3. API Documentation
+4. Request/response
+
+
+## Week04
