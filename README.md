@@ -44,5 +44,11 @@
 3. API Documentation
 4. Request/response
 
+### [Lecture 08](/notes/notes_lecture_08.md)
+1. Repeat and check homework
+2. Regression,Smoke, Exploratory and Ad-hoc testing
+3. Test plan
+4. TC management systems (Testomat)
+
 
 ## Week04
