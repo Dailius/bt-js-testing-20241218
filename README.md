@@ -50,5 +50,9 @@
 3. Test plan
 4. TC management systems (Testomat)
 
+### [Lecture 09](/notes/notes_lecture_09.md)
+1. Repeat and check homework
+2. Checklist
+3. Create smoke tests and checklist
 
 ## Week04
