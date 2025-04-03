@@ -55,4 +55,14 @@
 2. Checklist
 3. Create smoke tests and checklist
 
+### [Lecture 10](/notes/notes_lecture_10.md)
+1. Repeat and check homework
+2. Create Smoke test for mobile app.
+3. Defects and severities
+4. Bug lifecycle
+5. Jira
+6. Exercise to register bugs into Jira
+
+
 ## Week04
+## Week05

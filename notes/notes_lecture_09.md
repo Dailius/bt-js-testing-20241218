@@ -20,7 +20,8 @@ Palengvintum darbą naujokams ar mažiau patyrusiems testuotojams.
 Atliekant sanity check’us
 
 ## 3. Create smoke tests and checklist
-Create smoke test for https://coffee-cart.app/ in new catalog named "Smoke test"
+Create smoke test for https://coffee-cart.app/ in new catalog named "Smoke test".
 
 Create checklist with some excel form. You may use previously used form with small modification.
+
 
