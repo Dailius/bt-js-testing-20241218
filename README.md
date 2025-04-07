@@ -61,8 +61,13 @@
 3. Defects and severities
 4. Bug lifecycle
 5. Jira
-6. Exercise to register bugs into Jira
-
 
 ## Week04
+### [Lecture 11](/notes/notes_lecture_11.md)
+1. Repeat and check homework
+2. Jira
+3. Exercise to register bugs into Jira
+4. Boundary values
+5. Pesticide paradox
+
 ## Week05

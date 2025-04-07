@@ -1,0 +1,6 @@
+Register 5 defects from https://academybugs.com/find-bugs/
+
+Boundary values with 'deposit interest': 
+    https://www.testdome.com/questions/quality-assurance/deposit-interest/117001
+
+    
