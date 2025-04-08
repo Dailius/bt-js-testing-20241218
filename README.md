@@ -70,4 +70,8 @@
 4. Boundary values
 5. Pesticide paradox
 
+### [Lecture 12](/notes/notes_lecture_12.md)
+1. Repeat and check homework
+2. Postman scripts
+
 ## Week05
