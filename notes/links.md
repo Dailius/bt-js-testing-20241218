@@ -10,7 +10,6 @@
 [Git training branching](https://learngitbranching.js.org/)  
 [GitHub markdown language](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
 
-
 ## Links for homework, training etc.:
 [ToDo web app](https://todolist.james.am/#/)  
 [Fake e-shope sucedemo](https://www.saucedemo.com/)  

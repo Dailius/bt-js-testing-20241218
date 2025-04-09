@@ -74,4 +74,8 @@
 1. Repeat and check homework
 2. Postman scripts
 
+### [Lecture 13](/notes/notes_lecture_13.md)
+1. Repeat and check homework
+2. Postman scripts
+
 ## Week05
