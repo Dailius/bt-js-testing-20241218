@@ -1,0 +1,36 @@
+
+// Response body:
+// pm.response.json()[0].key_A
+// [] - array
+[
+{
+	"key_A":"some value",
+	"key_b":"some value"
+},
+{
+	"key_A":"some value",
+	"key_b":"some value"
+},
+{
+	"key_A":"some value",
+	"key_b":"some value"
+},
+]
+
+// Response body:
+// Response body:
+// pm.response.json().key_A
+// pm.response.json().key_b
+// pm.response.json().key_c[0].
+
+// {} - object
+
+{
+	"key_A":"some value",
+	"key_b":{},
+	"key_c":[
+	{},
+	{},
+	{},
+	],
+}

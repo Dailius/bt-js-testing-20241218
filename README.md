@@ -78,4 +78,8 @@
 1. Repeat and check homework
 2. Postman scripts
 
+### [Lecture 14]()
+1. Repeat and check homework
+2. Postman scripts, variables
+
 ## Week05
