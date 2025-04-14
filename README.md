@@ -83,3 +83,13 @@
 2. Postman scripts, variables
 
 ## Week05
+
+### [Lecture 15]()
+1. Homework (positive/negative API request)
+
+### [Lecture 16]()
+1. Repeat and check homework
+2. Test isolation
+3. Newman tool
+
+## Week06
