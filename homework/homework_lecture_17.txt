@@ -1,0 +1,9 @@
+https://jsonplaceholder.typicode.com/
+
+You should have written postman script tests for '/posts' or create then if you don't have.
+
+Require to complete following steps:
+* export collections into json file.
+* initiate npm project and write scripts in order to run test with newman tool.
+* create GitHub actions and run this tests in remote repository.
+
