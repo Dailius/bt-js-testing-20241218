@@ -1,0 +1,9 @@
+Compleat 'express_usr_mng' post request/response
+* request body should contain mandatory properties: username, password, email
+* compleat validation line 15
+* compleat validation line 19
+* check email validation
+* check username validation (max length 35)
+* provide better solution to generate id
+
+

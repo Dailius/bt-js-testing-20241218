@@ -1,6 +1,6 @@
 
 ## 1. Repeat and check homework
-## 3. GitHub Actions run Newman
+## 2. GitHub Actions run Newman
 
 Require postman json file and environment file accordingly.  
 Initiate git repository  
@@ -89,7 +89,7 @@ jobs:
           path: newman/report.html
 
 ```
-## 4. Newman reports
+## 3. Newman reports
 
 Creates test report into `.\newman\report_name.json`
 ```powershell

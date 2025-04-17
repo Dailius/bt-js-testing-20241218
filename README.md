@@ -78,7 +78,7 @@
 1. Repeat and check homework
 2. Postman scripts
 
-### [Lecture 14]()
+### [Lecture 14](/notes/notes_lecture_14.md)
 1. Repeat and check homework
 2. Postman scripts, variables
 
@@ -87,9 +87,19 @@
 ### [Lecture 15]()
 1. Homework (positive/negative API request)
 
-### [Lecture 16]()
+### [Lecture 16](/notes/notes_lecture_16.md)
 1. Repeat and check homework
 2. Test isolation
 3. Newman tool
+
+### [Lecture 17](/notes/notes_lecture_17.md)
+1. Repeat and check homework
+2. GitHub Actions run Newman
+3. Newman reports
+
+### [Lecture 18](/notes/notes_lecture_18.md)
+1. Repeat and check homework
+2. Repeat JavaScript
+3. Node express User Auth project 
 
 ## Week06
