@@ -1,0 +1,8 @@
+Project'express_usr_mng' write following requests :
+* update user details
+* delete user
+
+Write positive and negative API tests:
+* register new user
+* login user
+

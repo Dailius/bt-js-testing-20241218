@@ -103,3 +103,9 @@
 3. Node express User Auth project 
 
 ## Week06
+### [Lecture 19](/notes/notes_lecture_19.md)
+1. Repeat and check homework
+2. Postgres installation
+3. Node express User Auth project 
+
+## Week07
