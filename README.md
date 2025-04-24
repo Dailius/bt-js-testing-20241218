@@ -108,4 +108,13 @@
 2. Postgres installation
 3. Node express User Auth project 
 
+### [Lecture 20]()
+1. Repeat and check homework
+
+### [Lecture 21](/notes/notes_lecture_21.md)
+1. Repeat and check homework
+2. Postgres installation
+3. DB introduction
+4. SQL SELECT
+
 ## Week07
