@@ -42,7 +42,6 @@ Push local repo into GitHub:
     git push -u origin main
 ```
 
-
 ```bash
     git push
     git pull

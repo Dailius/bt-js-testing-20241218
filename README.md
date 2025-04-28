@@ -118,3 +118,8 @@
 4. SQL SELECT
 
 ## Week07
+### [Lecture 22](/notes/notes_lecture_22.md)
+1. SQL SELECT
+
+
+## Week08
