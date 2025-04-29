@@ -121,5 +121,11 @@
 ### [Lecture 22](/notes/notes_lecture_22.md)
 1. SQL SELECT
 
+### [Lecture 23](/notes/notes_lecture_23.md)
+1. Repeat and check homework
+2. SQL date formatter
+3. SQL joins
+
+
 
 ## Week08
