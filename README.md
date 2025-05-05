@@ -125,7 +125,11 @@
 1. Repeat and check homework
 2. SQL date formatter
 3. SQL joins
-
+4. 
+### [Lecture 24](/notes/notes_lecture_24.md)
 
 
 ## Week08
+### [Lecture 25](/notes/notes_lecture_25.md)
+1. Repeat and check homework
+2. API project and test
