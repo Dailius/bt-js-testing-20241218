@@ -1,0 +1,5 @@
+We did some progress on express_usr_mng project
+
+Require to modify GET API request in order to read data from postgres database
+and return user details 
+

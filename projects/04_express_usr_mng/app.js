@@ -1,43 +1,15 @@
 // const express = require("express");
 import express from "express";
-import pkg from 'pg'
-
+import pool from "./config/db.js"
+import initializeDb from "./utils/dbInitializer.js"
+import { hashPassword, comparePassword } from './utils/hash.js'
 
 const port = 3011;
 // const port = 8082;
 const app = express();
 app.use(express.json());
 
-const { Pool } = pkg;
-const pool = new Pool({
-    user: "postgres",
-    password: "root123",
-    database: "usrauth",
-    host: "localhost",
-    port: 5432
-});
-
-const createUsersTable = async () => {
-    const query = `
-        CREATE TABLE IF NOT EXISTS users(
-            user_id SERIAL PRIMARY KEY,
-            user_name VARCHAR(50) UNIQUE NOT NULL,
-            email VARCHAR(100) UNIQUE NOT NULL,
-            password TEXT NOT NULL,
-            created_at TIMESTAMP DEFAULT NOW(),
-            updated_at TIMESTAMP DEFAULT NOW()
-        );
-    `;
-
-    try {
-        await pool.query(query);
-        console.log('User table was created');
-    } catch (error) {
-        console.error("Error creating user table: ", error);
-    }
-}
-
-createUsersTable();
+initializeDb();
 
 const users = {};
 
@@ -74,8 +46,7 @@ app.post("/user", async (req, res) => {
         });
     };
 
-    const id = Date.now() // provide better solution
-    users[username] = { id, email, password }
+    const hashedPsw = await hashPassword(password)
 
     try {
         const result = await pool.query(
@@ -84,7 +55,7 @@ app.post("/user", async (req, res) => {
             VALUES
             ($1, $2, $3, NOW(), NOW())
             RETURNING *;`,
-            [username, email, password]
+            [username, email, hashedPsw]
         );
 
         res.status(201).json({

@@ -133,3 +133,9 @@
 ### [Lecture 25](/notes/notes_lecture_25.md)
 1. Repeat and check homework
 2. API project and test
+
+### [Lecture 26](/notes/notes_lecture_26.md)
+1. Intro to security
+2. JWT
+3. API key vs. JWT
+4. Attacks
