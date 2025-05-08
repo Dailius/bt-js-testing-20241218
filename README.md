@@ -139,3 +139,10 @@
 2. JWT
 3. API key vs. JWT
 4. Attacks
+ 
+### [Lecture 27](/notes/notes_lecture_27.md)
+1. Coding
+   
+### [Lecture 28]()
+
+
