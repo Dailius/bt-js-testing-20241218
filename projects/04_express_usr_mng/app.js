@@ -4,6 +4,7 @@ import pool from "./config/db.js"
 import initializeDb from "./utils/dbInitializer.js"
 import { hashPassword, comparePassword } from './utils/hash.js'
 import { generateToken } from './utils/jwt.js'
+import { authenticate } from './utils/auth.js'
 
 const port = 3011;
 // const port = 8082;
@@ -75,13 +76,9 @@ app.post("/user", async (req, res) => {
 });
 
 // http://localhost:3011/user
-app.get("/user", async (req, res) => {
+app.get("/user", authenticate, async (req, res) => {
     // res.status(200).json(users);
     try {
-        console.log(req.headers.authorization.split(' '))
-
-        // if(){}
-
         const result = await pool.query(
             `SELECT user_id, user_name, email, created_at, updated_at FROM users`
         );
@@ -104,7 +101,7 @@ app.get("/user", async (req, res) => {
 // http://localhost:3011/user/:userName
 // http://localhost:3011/user/user136
 
-app.get("/user/:name", async (req, res) => {
+app.get("/user/:name", authenticate, async (req, res) => {
     const { name } = req.params;
 
     try {
@@ -136,50 +133,50 @@ app.get("/user/:name", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-    const { username, password } = req.body;
+    try {
+        const { username, password } = req.body;
 
-    if (!username || !password) {
-        return res.status(400).json({ message: "Username and password are required." });
-    }
+        if (!username || !password) {
+            const error = new Error("Username and password are required.");
+            error.statusCode = 400;
+            throw error;
+        }
 
-    // if (!users[username] || users[username].password !== password) {
-    //     return res.status(401).json({ message: "Invalid user name or password" });
-    // }
+        const result = await pool.query(
+            `SELECT user_id, user_name, password
+            FROM users 
+            WHERE user_name = $1`,
+            [username]
+        );
 
-    const result = await pool.query(
-        `SELECT user_id, user_name, password
-         FROM users 
-         WHERE user_name = $1`,
-        [username]
-    );
+        const user = result.rows[0];
 
-    if (result.rows.length === 0) {
-        return res.status(404).json({
-            message: "User not found."
+        if (result.rows.length === 0 || !user.password || !user.user_name) {
+            const error = new Error("User not found new");
+            error.statusCode = 404;
+            throw error;
+        }
+
+        if (!comparePassword(password, user.password)) {
+            const error = new Error("Invalid user name or password");
+            error.statusCode = 401;
+            throw error;
+        }
+
+        res.status(200).json({
+            message: "Login successful",
+            userId: user.user_id,
+            username: user.user_name,
+            token: generateToken({ userId: user.user_id, username: user.user_name, }, 120)
         });
+    } catch (error) {
+        res.status(error.statusCode || 500).json({ error: error.message || "Internal server error" });
     }
-
-    const user = result.rows[0];
-
-    if (!comparePassword(password, user.password)) {
-        return res.status(401).json({ message: "Invalid user name or password" });
-    }
-
-    res.status(200).json({
-        message: "Login successful",
-        userId: user.user_id,
-        username: user.user_name,
-        token: generateToken({ userId: user.user_id, username: user.user_name, }, 120)
-    });
 });
 
-app.put("/user/:name", (req, res) => {
+app.put("/user/:name", authenticate, async (req, res) => {
     const { name } = req.params;
     const { email, password } = req.body;
-
-    if (!users[name]) {
-        return res.status(404).json({ message: "User not found" });
-    }
 
     if (
         // email === undefined 
@@ -192,20 +189,44 @@ app.put("/user/:name", (req, res) => {
         return res.status(400).json({ message: "Invalid password." });
     };
 
-    users[name].email = email;
-    users[name].password = password;
+    const hashedPsw = await hashPassword(password)
+
+    const result = await pool.query(
+        `UPDATE users 
+        SET
+            email = $2,
+            password = $3,
+            updated_at = NOW()
+        WHERE user_name = $1
+        RETURNING *`,
+        [name, email, hashedPsw]
+    );
+
+    // const user = await pool.query(
+    //     `SELECT * FROM users WHERE user_name = $1`,
+    //     [name]
+    // );
+
+    // console.log(user[0])
+
+
+    // res.status(200).json({
+    //     message: "User updated successfully",
+    //     user: {
+    //         username: result[0].user_name,
+    //         email: result[0].email,
+    //         password: result[0].password,
+    //         updatedAt: result[0].updated_at
+    //     }
+    // });
 
     res.status(200).json({
         message: "User updated successfully",
-        user: {
-            id: users[name].id,
-            username: name,
-            email: users[name].email
-        }
+        user: result[0]
     });
 });
 
-app.delete('/user/:name', (req, res) => {
+app.delete('/user/:name', authenticate, (req, res) => {
     const { name } = req.params;
 
     if (!users[name]) {

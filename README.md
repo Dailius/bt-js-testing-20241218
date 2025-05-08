@@ -141,8 +141,10 @@
 4. Attacks
  
 ### [Lecture 27](/notes/notes_lecture_27.md)
-1. Coding
+1. API coding
    
 ### [Lecture 28]()
+1. API coding and testing
+
 
 

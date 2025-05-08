@@ -1,4 +1,4 @@
-## 1. Intro to security
+## 1. coding
 
 Create file jwt.js:
 ```javascript
