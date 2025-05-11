@@ -13,8 +13,6 @@ app.use(express.json());
 
 initializeDb();
 
-const users = {};
-
 app.post("/user", async (req, res) => {
     // request body should contain mandatory properties: username, password, email
     const { name, password, email } = req.body;
@@ -30,11 +28,11 @@ app.post("/user", async (req, res) => {
         return res.status(400).json({ message: "Invalid password." });
     };
 
-    if (users[username]) {
-        return res.status(409).json({
-            message: "Username allready exist"
-        });
-    };
+    // if (users[username]) {
+    //     return res.status(409).json({
+    //         message: "Username allready exist"
+    //     });
+    // };
 
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         return res.status(400).json({
@@ -101,15 +99,22 @@ app.get("/user", authenticate, async (req, res) => {
 // http://localhost:3011/user/:userName
 // http://localhost:3011/user/user136
 
-app.get("/user/:name", authenticate, async (req, res) => {
-    const { name } = req.params;
+// app.get("/user/:name", authenticate, async (req, res) => {
+// const { name } = req.params;
+
+
+// Do not forget to add code line in auth.js: req.user = verifyToken(token);
+// Fixed jwt.js verifiedToken, require returned object
+
+app.get("/user/details", authenticate, async (req, res) => {
+    const { username } = req.user;
 
     try {
         const result = await pool.query(
             `SELECT user_id, user_name, email, created_at, updated_at 
              FROM users 
              WHERE user_name = $1`,
-            [name]
+            [username]
         );
 
         if (result.rows.length === 0) {
@@ -165,7 +170,7 @@ app.post("/login", async (req, res) => {
 
         res.status(200).json({
             message: "Login successful",
-            userId: user.user_id,
+            id: user.user_id,
             username: user.user_name,
             token: generateToken({ userId: user.user_id, username: user.user_name, }, 120)
         });
@@ -191,51 +196,67 @@ app.put("/user/:name", authenticate, async (req, res) => {
 
     const hashedPsw = await hashPassword(password)
 
-    const result = await pool.query(
-        `UPDATE users 
+    try {
+        const result = await pool.query(
+            `UPDATE users 
         SET
             email = $2,
             password = $3,
             updated_at = NOW()
         WHERE user_name = $1
         RETURNING *`,
-        [name, email, hashedPsw]
-    );
+            [name, email, hashedPsw]
+        );
 
-    // const user = await pool.query(
-    //     `SELECT * FROM users WHERE user_name = $1`,
-    //     [name]
-    // );
+        const resultUserUpdated = await pool.query(
+            `SELECT * FROM users WHERE user_name = $1`,
+            [name]
+        );
 
-    // console.log(user[0])
-
-
-    // res.status(200).json({
-    //     message: "User updated successfully",
-    //     user: {
-    //         username: result[0].user_name,
-    //         email: result[0].email,
-    //         password: result[0].password,
-    //         updatedAt: result[0].updated_at
-    //     }
-    // });
-
-    res.status(200).json({
-        message: "User updated successfully",
-        user: result[0]
-    });
+        const updatedUser = resultUserUpdated.rows[0];
+        res.status(200).json({
+            message: "User updated successfully",
+            user: {
+                id: updatedUser.user_id,
+                username: updatedUser.user_name,
+                email: updatedUser.email,
+                createdAt: updatedUser.created_at,
+                updatedAt: updatedUser.updated_at
+            }
+        });
+    }
+    catch (error) {
+        console.error("Error updating user: ", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
 });
 
-app.delete('/user/:name', authenticate, (req, res) => {
+app.delete('/user/:name', authenticate, async (req, res) => {
     const { name } = req.params;
 
-    if (!users[name]) {
-        return res.status(404).json({ message: "User not found" });
+    try {
+        const result = await pool.query(
+            `DELETE FROM users
+	        WHERE user_name = $1
+            RETURNING *`,
+            [name]
+        );
+
+        const deletedUser = result.rows[0];
+
+        if (!deletedUser) {
+            return res.status(404).json({
+                message: "User not found."
+            });
+        }
+
+        res.status(200).json({
+            message: "Account removed successfully"
+        });
+    } catch (error) {
+        console.error("Error deleting user: ", error);
+        res.status(500).json({ error: "Internal server error" });
     }
-
-    delete users[name];
-
-    res.status(204).json({ message: "removed" });
 });
 
 app.listen(port, () => {

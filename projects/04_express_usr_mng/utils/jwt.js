@@ -9,5 +9,5 @@ export const generateToken = (payload, expiresIn = '1h') => {
 }
 
 export const verifyToken = (token) => {
-    jwt.verify(token, process.env.JWT_SECRET)
+    return jwt.verify(token, process.env.JWT_SECRET)
 }

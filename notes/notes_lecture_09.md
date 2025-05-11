@@ -17,7 +17,8 @@ Palengvintum darbą naujokams ar mažiau patyrusiems testuotojams.
 * Prieš release’ą (leidimą į gamybinę aplinką)
 * Priėmimo (acceptance) testuose
 
-Atliekant sanity check’us
+Atliekant sanity testus  
+
 
 ## 3. Create smoke tests and checklist
 Create smoke test for https://coffee-cart.app/ in new catalog named "Smoke test".

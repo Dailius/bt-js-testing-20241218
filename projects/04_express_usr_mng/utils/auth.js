@@ -6,7 +6,7 @@ export const authenticate = (req, res, next) => {
     if (!token) return res.status(401).json({ error: 'Access denied' });
 
     try {
-        verifyToken(token);
+        req.user = verifyToken(token);
         next()
     } catch (error) {
         res.status(403).json({ error: 'Invalid token' });
