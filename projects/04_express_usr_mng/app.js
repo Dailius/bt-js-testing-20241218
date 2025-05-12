@@ -224,8 +224,7 @@ app.put("/user/:name", authenticate, async (req, res) => {
                 updatedAt: updatedUser.updated_at
             }
         });
-    }
-    catch (error) {
+    } catch (error) {
         console.error("Error updating user: ", error);
         res.status(500).json({ error: "Internal server error" });
     }

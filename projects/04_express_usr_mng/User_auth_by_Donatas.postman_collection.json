@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "403d1763-3674-454d-8f0a-8409a65b9f02",
-		"name": "User_auth",
+		"_postman_id": "6da04e71-c92d-499f-abe8-afbc6fceebdf",
+		"name": "User_auth_by_Donatas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "43531170",
-		"_collection_link": "https://donatasdailide.postman.co/workspace/Donatas-Dailide's-Workspace~a639a5a0-69d6-4d25-84c2-9aa27ca55f8c/collection/43531170-403d1763-3674-454d-8f0a-8409a65b9f02?action=share&source=collection_link&creator=43531170"
+		"_exporter_id": "15497739",
+		"_collection_link": "https://bt-js-test20241218.postman.co/workspace/BT-JS-test_2024_12_18~f15c0ed0-c7ee-4448-9a85-2f6cf1f4cb79/collection/15497739-6da04e71-c92d-499f-abe8-afbc6fceebdf?action=share&source=collection_link&creator=15497739"
 	},
 	"item": [
 		{
@@ -40,7 +40,7 @@
 											"pm.test('Checking types and values of properties', () => {\r",
 											"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('User registered successfully').and.not.to.be.empty;\r",
 											"    pm.expect(responseBody.user).to.be.an('object');\r",
-											"    pm.expect(responseBody.user.id).to.be.a('string').and.not.to.be.empty;\r",
+											"    pm.expect(responseBody.user.id).to.be.a('number');\r",
 											"    pm.expect(responseBody.user.username).to.be.a('string').and.not.to.be.empty;\r",
 											"    pm.expect(responseBody.user.email).to.be.a('string').and.not.to.be.empty;\r",
 											"});\r",
@@ -71,7 +71,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Kazkodel\",\r\n    \"password\": \"dadadada\",\r\n    \"email\": \"dkas@gmail.com\"\r\n}",
+									"raw": "{\r\n    \"name\": \"Naujas250506013\",\r\n    \"password\": \"dadadadasdfasdfaq\",\r\n    \"email\": \"dkas0013@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -99,20 +99,19 @@
 										"exec": [
 											"const responseBody = pm.response.json();\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test('Checking properties of responesBody', () => {\r",
 											"    pm.expect(responseBody).to.have.property('id');\r",
 											"    pm.expect(responseBody).to.have.property('username');\r",
 											"    pm.expect(responseBody).to.have.property('email');\r",
-											"    pm.expect(responseBody).to.have.property('password');\r",
 											"});\r",
 											"\r",
 											"pm.test('Checking types and values of properties', () => {\r",
 											"    pm.expect(responseBody).to.be.an('object');\r",
-											"    pm.expect(responseBody.id).to.be.a('string').and.not.to.be.empty;\r",
+											"    pm.expect(responseBody.id).is.a('number');\r",
 											"    pm.expect(responseBody.username).to.be.a('string').and.not.to.be.empty;\r",
 											"    pm.expect(responseBody.email).to.be.a('string').and.not.to.be.empty;\r",
 											"});\r",
@@ -131,6 +130,16 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -1152,18 +1161,22 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const responseBody = pm.response.json();\r",
+											"pm.collectionVariables.set('token', pm.response.json().token);\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test('Checking properties of responesBody', () => {\r",
+											"    const responseBody = pm.response.json();\r",
+											"    \r",
 											"    pm.expect(responseBody).to.have.property('message');\r",
 											"    pm.expect(responseBody).to.have.property('id');\r",
 											"});\r",
 											"\r",
 											"pm.test('Checking types and values of properties', () => {\r",
+											"    const responseBody = pm.response.json();\r",
+											"\r",
 											"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('Login successful');\r",
 											"    pm.expect(responseBody.id).to.be.a('string').to.have.lengthOf(36);\r",
 											"});\r",
@@ -1795,7 +1808,7 @@
 											"pm.test('Checking types and values of properties', () => {\r",
 											"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('User registered successfully').and.not.to.be.empty;\r",
 											"    pm.expect(responseBody.user).to.be.an('object');\r",
-											"    pm.expect(responseBody.user.id).to.be.a('string').and.not.to.be.empty;\r",
+											"    pm.expect(responseBody.user.id).to.be.a('number');\r",
 											"    pm.expect(responseBody.user.username).to.be.a('string').and.not.to.be.empty;\r",
 											"    pm.expect(responseBody.user.email).to.be.a('string').and.not.to.be.empty;\r",
 											"});\r",
@@ -1846,6 +1859,66 @@
 							"response": []
 						},
 						{
+							"name": "Login user Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set('tokenUpdated', pm.response.json().token);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test('Checking properties of responesBody', () => {\r",
+											"    const responseBody = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(responseBody).to.have.property('message');\r",
+											"    pm.expect(responseBody).to.have.property('id');\r",
+											"});\r",
+											"\r",
+											"pm.test('Checking types and values of properties', () => {\r",
+											"    const responseBody = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('Login successful');\r",
+											"    pm.expect(responseBody.id).to.be.a('number');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"{{userNameUpdate}}\",\r\n    \"password\": \"{{passWordUpdate}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Update user",
 							"event": [
 								{
@@ -1863,9 +1936,8 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Check responseBody type/value\", () => {\r",
-											"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('Updated successfully');\r",
-											"    pm.expect(responseBody.password).to.eql(String(JSON.parse(pm.request.body.raw).password));\r",
-											"    pm.expect(responseBody.email).to.eql(String(JSON.parse(pm.request.body.raw).email));\r",
+											"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('User updated successfully');\r",
+											"    pm.expect(responseBody.user.email).to.eql(String(JSON.parse(pm.request.body.raw).email));\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response time is less than 1000ms\", function () {\r",
@@ -1878,6 +1950,16 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenUpdated}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -1911,22 +1993,20 @@
 										"exec": [
 											"const responseBody = pm.response.json();\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Check responseBody property\", () => {\r",
 											"    pm.expect(responseBody).to.have.property(\"id\");\r",
 											"    pm.expect(responseBody).to.have.property(\"username\");\r",
 											"    pm.expect(responseBody).to.have.property(\"email\");\r",
-											"    pm.expect(responseBody).to.have.property(\"password\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Check responseBody type/value\", () => {\r",
 											"    pm.expect(responseBody.username).to.be.a('string').to.be.eql(pm.collectionVariables.get('userNameUpdate'));\r",
 											"    pm.expect(responseBody.email).to.be.a('string');\r",
-											"    pm.expect(responseBody.password).to.be.a('string');\r",
-											"    pm.expect(responseBody.id).to.be.a('string');\r",
+											"    pm.expect(responseBody.id).to.be.a('number');\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response time is less than 1000ms\", function () {\r",
@@ -1942,7 +2022,73 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenUpdated}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete user updated",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenUpdated}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
 								"header": [],
 								"body": {
 									"mode": "raw",
@@ -2715,8 +2861,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.collectionVariables.set('userName', pm.response.json().user.username);\r",
-									"pm.collectionVariables.set('passWord', JSON.parse(pm.request.body.raw).password);\r",
+									"pm.collectionVariables.set('userNameDelete', pm.response.json().user.username);\r",
+									"pm.collectionVariables.set('passWordDelete', JSON.parse(pm.request.body.raw).password);\r",
 									"\r",
 									"const responseBody = pm.response.json();\r",
 									"\r",
@@ -2735,7 +2881,7 @@
 									"pm.test('Checking types and values of properties', () => {\r",
 									"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('User registered successfully').and.not.to.be.empty;\r",
 									"    pm.expect(responseBody.user).to.be.an('object');\r",
-									"    pm.expect(responseBody.user.id).to.be.a('string').and.not.to.be.empty;\r",
+									"    pm.expect(responseBody.user.id).to.be.a('number');\r",
 									"    pm.expect(responseBody.user.username).to.be.a('string').and.not.to.be.empty;\r",
 									"    pm.expect(responseBody.user.email).to.be.a('string').and.not.to.be.empty;\r",
 									"});\r",
@@ -2766,7 +2912,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Kazkodel\",\r\n    \"password\": \"dadadada\",\r\n    \"email\": \"dkas@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\": \"KazkodelDelete\",\r\n    \"password\": \"dadadada\",\r\n    \"email\": \"dkasDlt@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2786,14 +2932,76 @@
 					"response": []
 				},
 				{
+					"name": "Login user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set('tokenDeleted', pm.response.json().token);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('Checking properties of responesBody', () => {\r",
+									"    const responseBody = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseBody).to.have.property('message');\r",
+									"    pm.expect(responseBody).to.have.property('id');\r",
+									"});\r",
+									"\r",
+									"pm.test('Checking types and values of properties', () => {\r",
+									"    const responseBody = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('Login successful');\r",
+									"    pm.expect(responseBody.id).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{userNameDelete}}\",\r\n    \"password\": \"{{passWordDelete}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete user",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 204\", function () {\r",
-									"    pm.response.to.have.status(204);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Response time is less than 1000ms\", function () {\r",
@@ -2807,6 +3015,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenDeleted}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -2819,13 +3037,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/user/{{userName}}",
+							"raw": "{{baseUrl}}/user/{{userNameDelete}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"user",
-								"{{userName}}"
+								"{{userNameDelete}}"
 							]
 						}
 					},
@@ -2840,8 +3058,8 @@
 								"exec": [
 									"const responseBody = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check responseBody property\", () => {\r",
@@ -2849,7 +3067,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Check responseBody type/value\", () => {\r",
-									"    pm.expect(responseBody.message).to.be.a('string').to.be.eql(\"Username doesn't exist\");\r",
+									"    pm.expect(responseBody.message).to.be.a('string').to.be.eql(\"User not found.\");\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Response time is less than 1000ms\", function () {\r",
@@ -2865,6 +3083,16 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenDeleted}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -2877,13 +3105,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/user/{{userName}}",
+							"raw": "{{baseUrl}}/user/details",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"user",
-								"{{userName}}"
+								"details"
 							]
 						}
 					},
@@ -3028,6 +3256,68 @@
 					"response": []
 				},
 				{
+					"name": "Login user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set('token', pm.response.json().token);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('Checking properties of responesBody', () => {\r",
+									"    const responseBody = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseBody).to.have.property('message');\r",
+									"    pm.expect(responseBody).to.have.property('id');\r",
+									"});\r",
+									"\r",
+									"pm.test('Checking types and values of properties', () => {\r",
+									"    const responseBody = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseBody.message).to.be.a('string').to.be.eql('Login successful');\r",
+									"    pm.expect(responseBody.id).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{userName}}\",\r\n    \"password\": \"{{passWord}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get users",
 					"event": [
 						{
@@ -3041,7 +3331,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Check responseBody property\", () => {\r",
-									"    pm.expect(responseBody).to.be.an('object');\r",
+									"    pm.expect(responseBody).to.be.an('array');\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Response time is less than 1000ms\", function () {\r",
@@ -3052,11 +3342,35 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/user",
 							"host": [
@@ -3070,7 +3384,7 @@
 					"response": []
 				},
 				{
-					"name": "Get user by name",
+					"name": "Get user",
 					"event": [
 						{
 							"listen": "test",
@@ -3078,22 +3392,8 @@
 								"exec": [
 									"const responseBody = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"pm.test('Checking properties of responesBody', () => {\r",
-									"    pm.expect(responseBody).to.have.property('id');\r",
-									"    pm.expect(responseBody).to.have.property('username');\r",
-									"    pm.expect(responseBody).to.have.property('email');\r",
-									"    pm.expect(responseBody).to.have.property('password');\r",
-									"});\r",
-									"\r",
-									"pm.test('Checking types and values of properties', () => {\r",
-									"    pm.expect(responseBody).to.be.an('object');\r",
-									"    pm.expect(responseBody.id).to.be.a('string').and.not.to.be.empty;\r",
-									"    pm.expect(responseBody.username).to.be.a('string').and.not.to.be.empty;\r",
-									"    pm.expect(responseBody.email).to.be.a('string').and.not.to.be.empty;\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Response time is less than 1000ms\", function () {\r",
@@ -3110,6 +3410,16 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -3122,13 +3432,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/user/{{userName}}",
+							"raw": "{{baseUrl}}/user",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"user",
-								"{{userName}}"
+								"user"
 							]
 						}
 					},
@@ -3221,7 +3530,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "",
+			"value": "http://localhost:3011",
 			"type": "string"
 		},
 		{
@@ -3238,6 +3547,26 @@
 		},
 		{
 			"key": "passWordUpdate",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "tokenUpdated",
+			"value": ""
+		},
+		{
+			"key": "userNameDelete",
+			"value": ""
+		},
+		{
+			"key": "passWordDelete",
+			"value": ""
+		},
+		{
+			"key": "tokenDeleted",
 			"value": ""
 		}
 	]
