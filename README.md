@@ -143,8 +143,10 @@
 ### [Lecture 27](/notes/notes_lecture_27.md)
 1. API coding
    
-### [Lecture 28]()
+### [Lecture 28](/notes/notes_lecture_28.md)
 1. API coding and testing
 
-
+### [Lecture 29](/notes/notes_lecture_29.md)
+1. Repeat and check homework
+2. Unit and integration testing
 
