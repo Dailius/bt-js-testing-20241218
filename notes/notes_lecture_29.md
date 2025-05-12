@@ -26,7 +26,7 @@ npm i --save-dev jest supertest
 Update package.json file to add a test script:
 ```json
  "scripts": {
-    "dev": "node --watch ."
+    "test": "jest"
   },
 ```
 
