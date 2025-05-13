@@ -150,3 +150,6 @@
 1. Repeat and check homework
 2. Unit and integration testing
 
+### [Lecture 30](/notes/notes_lecture_30.md)
+1. Repeat and check homework
+2. Unit and integration testing

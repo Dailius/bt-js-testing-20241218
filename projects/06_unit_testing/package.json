@@ -2,9 +2,11 @@
   "name": "06_unit_testing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/server.js",
   "scripts": {
-    "test": "jest"
+    "dev": "node --watch .",
+    "test": "jest",
+    "tst-api": "jest -- ./__tests__/app.test.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +15,8 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "supertest": "^7.1.0"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
