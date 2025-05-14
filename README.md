@@ -153,3 +153,9 @@
 ### [Lecture 30](/notes/notes_lecture_30.md)
 1. Repeat and check homework
 2. Unit and integration testing
+
+### [Lecture 31](/notes/notes_lecture_31.md)
+1. Repeat and check homework
+2. Automation testing
+3. Cypress install
+4. First test with cypress
