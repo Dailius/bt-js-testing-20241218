@@ -159,3 +159,16 @@
 2. Automation testing
 3. Cypress install
 4. First test with cypress
+
+### [Lecture 32](/notes/notes_lecture_32.md)
+1. Repeat and check homework
+2. E2E tests vs integration tests.
+3. Get vs contains in cypress.
+4. Actions in cypress: type and click.
+5. Combinator selector
+
+
+<!-- 
+### [Lecture 32](/notes/notes_lecture_32.md)
+1. Repeat and check homework
+2. Combinator selector -->
