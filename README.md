@@ -1,3 +1,5 @@
+start -3/19/2025	
+end - 6/12/2025
 
 
 ## Week01
@@ -9,7 +11,6 @@
 1. Repeat
 2. Git commands
 3. Git branching
-
 
 ## Week02
 ### [Lecture 03](/notes/notes_lecture_03.md)
@@ -167,8 +168,16 @@
 4. Actions in cypress: type and click.
 5. Combinator selector
 
-
-<!-- 
-### [Lecture 32](/notes/notes_lecture_32.md)
+### [Lecture 33](/notes/notes_lecture_33.md)
 1. Repeat and check homework
-2. Combinator selector -->
+2. Hooks
+3. Combinator selector
+4. Readme
+
+
+<!-- ### [Lecture 34](/notes/notes_lecture_34.md)
+5. xpath selector -->
+
+
+
+

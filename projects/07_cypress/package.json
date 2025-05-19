@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "npx http-server -p 8082",
     "cyo": "npx cypress open"
   },
   "keywords": [],
