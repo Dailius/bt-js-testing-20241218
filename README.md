@@ -174,10 +174,18 @@ end - 6/12/2025
 3. Combinator selector
 4. Readme
 
+### [Lecture 34](/notes/notes_lecture_34.md)
+1. Repeat and check homework
+2. xpath selector
+3. Intro to CI/CD
+4. Virtual machines
+5. Cypress run
 
-<!-- ### [Lecture 34](/notes/notes_lecture_34.md)
-5. xpath selector -->
 
+<!-- 
+### [Lecture 35](/notes/notes_lecture_35.md)
+1. Repeat and check homework
+2. Cypress configuration -->
 
 
 
