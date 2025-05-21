@@ -181,11 +181,17 @@ end - 6/12/2025
 4. Virtual machines
 5. Cypress run
 
-
-<!-- 
 ### [Lecture 35](/notes/notes_lecture_35.md)
 1. Repeat and check homework
-2. Cypress configuration -->
+2. Cypress configuration
+3. Single page apps (spa). Website vs web applications.
+4. React
+5. Cypress commands
+6. Scripts
+7. Github actions pipelines
 
 
-
+<!-- ### [Lecture 36](/notes/notes_lecture_36.md)
+1. Repeat and check homework
+2. Cypress commands
+3. Github actions pipelines -->
