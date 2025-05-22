@@ -9,3 +9,16 @@ describe('template spec', () => {
         cy.get('span[data-test="title"]').should('be.visible');
     })
 })
+
+
+describe('TS Cart', ()=>{
+
+    beforeEach(() => {
+        cy.login('standard_user','secret_sauce');
+    });
+
+    it('Add items into cart', ()=>{
+        
+    });
+
+});

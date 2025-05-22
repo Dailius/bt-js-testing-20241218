@@ -191,7 +191,7 @@ end - 6/12/2025
 7. Github actions pipelines
 
 
-<!-- ### [Lecture 36](/notes/notes_lecture_36.md)
+### [Lecture 36](/notes/notes_lecture_36.md)
 1. Repeat and check homework
 2. Cypress commands
-3. Github actions pipelines -->
+3. Github actions pipelines
