@@ -195,3 +195,8 @@ end - 6/12/2025
 1. Repeat and check homework
 2. Cypress commands
 3. Github actions pipelines
+
+### [Lecture 37](/notes/notes_lecture_37.md)
+1. Repeat and check homework
+2. final project
+
