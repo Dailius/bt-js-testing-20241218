@@ -200,3 +200,7 @@ end - 6/12/2025
 1. Repeat and check homework
 2. final project
 
+
+
+### [Lecture 40](/notes/notes_lecture_40.md)
+1. final project
