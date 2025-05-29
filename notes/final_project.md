@@ -46,9 +46,9 @@
 * https://sweetshop.netlify.app/  
 * https://parabank.parasoft.com/parabank/index.htm  
 * https://www.globalsqa.com/angularJs-protractor/BankingProject/  
-* https://documenter.getpostman.com/view/4012288/TzK2bEa8
-* https://petstore.swagger.io/
-  
+* https://documenter.getpostman.com/view/4012288/TzK2bEa8  
+* https://petstore.swagger.io/  
+* https://thinking-tester-contact-list.herokuapp.com/   
 
 Registration to final project presentation: 
 2025-06-09
