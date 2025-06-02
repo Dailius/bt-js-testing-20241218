@@ -52,6 +52,7 @@
 
 Registration to final project presentation: 
 2025-06-09
+   Donatas Dailidė
 
 2025-06-10
 
@@ -61,4 +62,9 @@ Registration to final project presentation:
 
 
  
-`
+## README:
+[About README](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)  
+[README syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
+[Markdown guide](https://www.markdownguide.org/basic-syntax/#reference-style-links)  
+[Badges](https://shields.io/badges)  
+[Counter view](https://github.com/antonkomarev/github-profile-views-counter)  
